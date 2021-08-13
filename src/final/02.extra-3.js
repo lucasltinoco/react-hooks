@@ -2,7 +2,7 @@
 // 💯 custom hook
 // http://localhost:3000/isolated/final/02.extra-3.js
 
-import React from 'react'
+import * as React from 'react'
 
 function useLocalStorageState(key, defaultValue = '') {
   const [state, setState] = React.useState(
@@ -16,8 +16,8 @@ function useLocalStorageState(key, defaultValue = '') {
   return [state, setState]
 }
 
-function Greeting() {
-  const [name, setName] = useLocalStorageState('name')
+function Greeting({initialName = ''}) {
+  const [name, setName] = useLocalStorageState('name', initialName)
 
   function handleChange(event) {
     setName(event.target.value)

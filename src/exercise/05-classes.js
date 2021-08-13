@@ -1,7 +1,8 @@
 // useRef and useEffect: DOM interaction
+// 💯 (alternate) migrate from classes
 // http://localhost:3000/isolated/exercise/05-classes.js
 
-import React from 'react'
+import * as React from 'react'
 import VanillaTilt from 'vanilla-tilt'
 
 // If you'd rather practice refactoring a class component to a function
