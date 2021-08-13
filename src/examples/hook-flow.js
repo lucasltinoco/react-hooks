@@ -2,7 +2,11 @@
 // https://github.com/donavon/hook-flow
 // http://localhost:3000/isolated/examples/hook-flow.js
 
-import React from 'react'
+// PLEASE NOTE: there was a subtle change in the order of cleanup functions
+// getting called in React 17:
+// https://github.com/kentcdodds/react-hooks/issues/90
+
+import * as React from 'react'
 
 function Child() {
   console.log('%c    Child: render start', 'color: MediumSpringGreen')

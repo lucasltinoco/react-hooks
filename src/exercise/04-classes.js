@@ -1,7 +1,8 @@
 // useState: tic tac toe
+// 💯 (alternate) migrate from classes
 // http://localhost:3000/isolated/exercise/04-classes.js
 
-import React from 'react'
+import * as React from 'react'
 
 // If you'd rather practice refactoring a class component to a function
 // component with hooks, then go ahead and do this exercise.
@@ -101,9 +102,7 @@ function calculateStatus(winner, squares, nextValue) {
 }
 
 function calculateNextValue(squares) {
-  const xSquaresCount = squares.filter(r => r === 'X').length
-  const oSquaresCount = squares.filter(r => r === 'O').length
-  return oSquaresCount === xSquaresCount ? 'X' : 'O'
+  return squares.filter(Boolean).length % 2 === 0 ? 'X' : 'O'
 }
 
 function calculateWinner(squares) {
